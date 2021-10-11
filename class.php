@@ -4,7 +4,11 @@ use Bitrix\Main\Loader,
         Bitrix\Iblock,
         Bitrix\Main\Context,
         Bitrix\Main\Localization\Loc;
-
+/**
+ * class Comments
+ *
+ * it add and list comments for any iblock element
+ */
 class Comments extends CBitrixComponent
 {
     const COMMENTS_IBLOCK_TYPE = 'service';
@@ -43,7 +47,7 @@ class Comments extends CBitrixComponent
     }
 
     /**
-     * [checkCommentsIblockType description]
+     * [проверка на существования типа инфоблока для комментов]
      * @return [type] [description]
      */
     protected function checkCommentsIblockType()
@@ -52,7 +56,7 @@ class Comments extends CBitrixComponent
     }
 
     /**
-     * [checkCommentsIblock description]
+     * [проверка на существования самого инфоблока для комментов]
      * @return [type] [description]
      */
     protected function checkCommentsIblock()
@@ -80,7 +84,7 @@ class Comments extends CBitrixComponent
     }
 
     /**
-     * [createCommentsIblockType description]
+     * [создаем отдельный тип инфоблока для комментов]
      * @return [type] [description]
      */
     protected function createCommentsIblockType()
@@ -109,7 +113,7 @@ class Comments extends CBitrixComponent
     }
 
     /**
-     * [createCommentsIblock description]
+     * [создаем отдельный инфоблок для комментов]
      * @return [type] [description]
      */
     protected function createCommentsIblock()
@@ -163,7 +167,7 @@ class Comments extends CBitrixComponent
     }
 
     /**
-     * [addField description]
+     * [добавляю свойства для инфоблока комментов]
      * @param [type] $arFields [description]
      */
     public function addField($arFields){
@@ -176,7 +180,7 @@ class Comments extends CBitrixComponent
     }
 
     /**
-     * [validateFields description]
+     * [проверка полей комментария перед отправкой]
      * @param  [type] $postValues [description]
      * @return [type]             [description]
      */
@@ -189,7 +193,7 @@ class Comments extends CBitrixComponent
     }    
 
     /**
-     * [addComment description]
+     * [добавление комментария]
      * @param [type] $postValues [description]
      */
     public function addComment($postValues)
@@ -213,8 +217,8 @@ class Comments extends CBitrixComponent
     }
 
     /**
-     * [getElementComments description]
-     * @param  string $element_id [description]
+     * [получение списка добавленных коментов]
+     * @param  string $element_id [по его id]
      * @return [type]             [description]
      */
     public function getElementComments(string $element_id)
